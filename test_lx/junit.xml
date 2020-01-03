@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="8" hostname="USER-20180524KD" name="pytest" skipped="0" tests="14" time="0.269" timestamp="2019-12-27T16:37:23.171503"><testcase classname="lx_unittest.test_unit" file="lx_unittest\test_unit.py" line="5" name="test_div_int" time="0.003"></testcase><testcase classname="lx_unittest.test_unit" file="lx_unittest\test_unit.py" line="9" name="test_div_folat" time="0.003"><failure message="assert 3.3333333333333335 == 0.33
+ +  where 3.3333333333333335 = div(10, 3)">@pytest.mark.ha
+    def test_div_folat():
+&gt;       assert div(10, 3) == 0.33
+E       assert 3.3333333333333335 == 0.33
+E        +  where 3.3333333333333335 = div(10, 3)
+
+lx_unittest\test_unit.py:12: AssertionError</failure></testcase><testcase classname="lx_unittest.test_unit" file="lx_unittest\test_unit.py" line="13" name="test_div_fu" time="0.001"><failure message="TypeError: unsupported operand type(s) for /: &apos;int&apos; and &apos;str&apos;">def test_div_fu():
+&gt;       assert div(10, &apos;a&apos;)
+
+lx_unittest\test_unit.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = 10, b = &apos;a&apos;
+
+    def div(a, b):
+&gt;       return a / b
+E       TypeError: unsupported operand type(s) for /: &apos;int&apos; and &apos;str&apos;
+
+lx_unittest\test_unit.py:5: TypeError</failure></testcase><testcase classname="test_lx.test_div1" file="test_lx\test_div1.py" line="4" name="test_001[9--1--9]" time="0.003"></testcase><testcase classname="test_lx.test_div1" file="test_lx\test_div1.py" line="4" name="test_001[10-5-2]" time="0.001"></testcase><testcase classname="test_lx.test_div1" file="test_lx\test_div1.py" line="4" name="test_001[1000000-1-1000000]" time="0.004"></testcase><testcase classname="test_lx.test_div1" file="test_lx\test_div1.py" line="4" name="test_001[10-2-5]" time="0.006"></testcase><testcase classname="test_lx.test_div1" file="test_lx\test_div1.py" line="4" name="test_001[-9--1-9]" time="0.003"></testcase><testcase classname="test_lx.test_div1" file="test_lx\test_div1.py" line="16" name="test_002[a-5-TypeError]" time="0.005"><failure message="TypeError: unsupported operand type(s) for /: &apos;str&apos; and &apos;int&apos;">t1 = &apos;a&apos;, t2 = 5, r3 = &lt;class &apos;TypeError&apos;&gt;
+
+    @pytest.mark.yes
+    @pytest.mark.parametrize(&quot;t1, t2, r3&quot;, {
+        (&quot;a&quot;, 5, TypeError),
+        (5, &quot;a&quot;, TypeError)
+    })
+    def test_002(t1, t2, r3):
+&gt;       assert div(t1, t2) == r3
+
+test_lx\test_div1.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = &apos;a&apos;, b = 5
+
+    def div(a, b):
+        # 适用性， 健壮性
+&gt;       return a / b
+E       TypeError: unsupported operand type(s) for /: &apos;str&apos; and &apos;int&apos;
+
+test_lx\div.py:3: TypeError</failure></testcase><testcase classname="test_lx.test_div1" file="test_lx\test_div1.py" line="16" name="test_002[5-a-TypeError]" time="0.004"><failure message="TypeError: unsupported operand type(s) for /: &apos;int&apos; and &apos;str&apos;">t1 = 5, t2 = &apos;a&apos;, r3 = &lt;class &apos;TypeError&apos;&gt;
+
+    @pytest.mark.yes
+    @pytest.mark.parametrize(&quot;t1, t2, r3&quot;, {
+        (&quot;a&quot;, 5, TypeError),
+        (5, &quot;a&quot;, TypeError)
+    })
+    def test_002(t1, t2, r3):
+&gt;       assert div(t1, t2) == r3
+
+test_lx\test_div1.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = 5, b = &apos;a&apos;
+
+    def div(a, b):
+        # 适用性， 健壮性
+&gt;       return a / b
+E       TypeError: unsupported operand type(s) for /: &apos;int&apos; and &apos;str&apos;
+
+test_lx\div.py:3: TypeError</failure></testcase><testcase classname="test_lx.test_div1" file="test_lx\test_div1.py" line="24" name="test_003[0-5-None]" time="0.003"><failure message="assert 0.0 == None
+ +  where 0.0 = div(0, 5)">e1 = 0, e2 = 5, s = None
+
+    @pytest.mark.parametrize(&quot;e1, e2, s&quot;, {
+        (5, 0, None),
+        (0, 5, None)
+    })
+    def test_003(e1, e2, s):
+&gt;       assert div(e1, e2) == s
+E       assert 0.0 == None
+E        +  where 0.0 = div(0, 5)
+
+test_lx\test_div1.py:30: AssertionError</failure></testcase><testcase classname="test_lx.test_div1" file="test_lx\test_div1.py" line="24" name="test_003[5-0-None]" time="0.006"><failure message="ZeroDivisionError: division by zero">e1 = 5, e2 = 0, s = None
+
+    @pytest.mark.parametrize(&quot;e1, e2, s&quot;, {
+        (5, 0, None),
+        (0, 5, None)
+    })
+    def test_003(e1, e2, s):
+&gt;       assert div(e1, e2) == s
+
+test_lx\test_div1.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = 5, b = 0
+
+    def div(a, b):
+        # 适用性， 健壮性
+&gt;       return a / b
+E       ZeroDivisionError: division by zero
+
+test_lx\div.py:3: ZeroDivisionError</failure></testcase><testcase classname="test_lx.test_div1" file="test_lx\test_div1.py" line="39" name="test_004[ -5-TypeError]" time="0.005"><failure message="TypeError: unsupported operand type(s) for /: &apos;str&apos; and &apos;int&apos;">g1 = &apos; &apos;, g2 = 5, y = &lt;class &apos;TypeError&apos;&gt;
+
+    @pytest.mark.parametrize(&quot;g1, g2, y&quot;, {
+        (&apos; &apos;, 5, TypeError),
+        (10, &apos; &apos;, TypeError),
+    })
+    def test_004(g1, g2, y):
+&gt;       assert div(g1, g2) == y
+
+test_lx\test_div1.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = &apos; &apos;, b = 5
+
+    def div(a, b):
+        # 适用性， 健壮性
+&gt;       return a / b
+E       TypeError: unsupported operand type(s) for /: &apos;str&apos; and &apos;int&apos;
+
+test_lx\div.py:3: TypeError</failure></testcase><testcase classname="test_lx.test_div1" file="test_lx\test_div1.py" line="39" name="test_004[10- -TypeError]" time="0.006"><failure message="TypeError: unsupported operand type(s) for /: &apos;int&apos; and &apos;str&apos;">g1 = 10, g2 = &apos; &apos;, y = &lt;class &apos;TypeError&apos;&gt;
+
+    @pytest.mark.parametrize(&quot;g1, g2, y&quot;, {
+        (&apos; &apos;, 5, TypeError),
+        (10, &apos; &apos;, TypeError),
+    })
+    def test_004(g1, g2, y):
+&gt;       assert div(g1, g2) == y
+
+test_lx\test_div1.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = 10, b = &apos; &apos;
+
+    def div(a, b):
+        # 适用性， 健壮性
+&gt;       return a / b
+E       TypeError: unsupported operand type(s) for /: &apos;int&apos; and &apos;str&apos;
+
+test_lx\div.py:3: TypeError</failure></testcase></testsuite></testsuites>
