@@ -24,6 +24,7 @@ class TestZy:
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
 
+
     def test_lx2(self):
         self.driver.find_element(By.CSS_SELECTOR,'[title="MTSC2020 中国互联网测试开发大会议题征集"]').click()
         self.driver.find_element(By.CSS_SELECTOR,'[data-toggle="dropdown"]').click()

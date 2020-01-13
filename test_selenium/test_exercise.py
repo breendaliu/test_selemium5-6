@@ -14,6 +14,8 @@ class TestTask(TestZy):
         self.driver.get("https://testerhome.com")
         self.driver.implicitly_wait(5)
 
+
+
     # def wait(self, timeout, method):
     #     WebDriverWait(self.driver, timeout, method).until(method)
     #
